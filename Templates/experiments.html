@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+  {% block content %}
+    {%include'flash.html'%}
+    
+    
+        <table class="table table-hover table-secondary table-m mt-3">
+            <thead>
+               
+                
+                <th>Experiment id</th>
+                <th>Team id</th>
+                <th>Non disposables equipment</th>
+                <th>Non disposable need</th>
+                <th>Disposables</th>
+                <th>Disposables needed</th>
+                <th>Experiment status</th>
+                <th>result</th>
+                <th>Start date</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+            </thead>
+            <tbody>
+               {% for i in experiment %} 
+                <tr>
+                 <td>{{i.exper_id}}</td>
+                 <td>{{i.team_id}}</td>
+                 <td>{{i.equipment_type}}</td>
+                 <td>{{i.equip_needed}}</td>
+                 <td>{{i.disposable_type}}</td>
+                 <td>{{i.dispos_needed}}</td>
+                 <td>{{i.completed}}</td>
+                 <td>{{i.result}}</td>
+                 <td>{{i.start_date}}</td>
+                 <td> <a href="{{url_for('editexperiments',id=i.exper_id)}}"><button class="btn btn-info active">Edit</button></a></td>
+                 <td> <a href="{{url_for('Delete', id=i.exper_id)}}"><button class="btn btn-danger active">Delete</button></a></td>
+
+                 
+                </tr>
+                {% endfor %}
+             </tbody>
+
+        </table>
+    
+    {% endblock %}

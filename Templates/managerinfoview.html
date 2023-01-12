@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+  {% block content %}
+    {% include'flash.html'%}
+    
+    
+        <table class="table table-hover table-m mt-3">
+            <thead>
+                <th>Employee id</th>
+                <th>Team id</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Date of birth</th>
+                <th>Address</th>
+                <th>Salary</th>
+                <th>Hire date</th>
+                <th>Phone number</th>
+
+
+                
+            </thead>
+            <tbody>
+            {% for i in contactinfo %} 
+            </tr>   
+            <td>{{i.emp_id}}</td>
+            <td>{{i.team_id}}</td>
+            <td>{{i.first_name}}</td>
+            <td>{{i.last_name}}</td>
+            <td>{{i.dob}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.salary}}</td>
+            <td>{{i.hire_date}}</td>
+            <td>{{i.phone_no}}</td>
+
+           </tr>
+                {% endfor %}
+             </tbody>
+
+        </table>
+    
+    
+    {% endblock %}

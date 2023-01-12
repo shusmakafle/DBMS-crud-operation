@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %}
+  {%include'flash.html'%}
+  {% if g %}
+  <div class="container">
+<form  method="post"> 
+    <h5>Enter the Experiments Details</h5>
+    <div class="form-group">
+        <h5>Experiment id</h5>
+        <input class="form-control" type="text" name="exper_id" placeholder="TC09BHC">
+    </div>
+    <div class="form-group">
+        <h5>Team id</h5>
+        <input class="form-control" type="text" name="team_id" placeholder="1-99999">
+    </div>
+    <div class="form-group">
+        <h5>Non disposables equipment</h5>
+        <input class="form-control" type="text" name="equipment_type" placeholder="microscope">
+    </div>
+    <div class="form-group">
+        <h5>Non disposable needed</h5>
+        <input class="form-control" type="text" name="equip_needed" placeholder="20">
+    </div>
+    <div class="form-group">
+        <h5>Disposables</h5>
+        <input class="form-control" type="text" name="disposable_type" placeholder="syringe">
+    </div>
+    <div class="form-group">
+        <h5>Disposables needed</h5>
+        <input class="form-control" type="text" name="dispos_needed" placeholder="20">
+    </div>
+    <div class="form-group">
+        <h5>Experiment status</h5>
+        <input class="form-control" type="text" name="completed" placeholder="default 'incomplete'::completed">
+    </div>
+    <div class="form-group">
+        <h5>Result</h5>
+        <input class="form-control" type="text" name="result" placeholder="default 'unknown'::test_result">
+    </div>
+    
+    <div class="form-group">
+        <button href="/experimentsadd"class="btn btn-outline-info">Submit</button>
+    </div>
+    </form>
+</div>
+{% else %}
+<div class="container">
+    <form  method="post"> 
+        <h5>update the Experiments Details</h5>
+        <div class="form-group">
+            <h5>Experiment id</h5>
+            <input class="form-control" type="text" name="exper_id" placeholder="TC09BHC">
+        </div>
+        <div class="form-group">
+            <h5>Team id</h5>
+            <input class="form-control" type="text" name="team_id" placeholder="1-99999">
+        </div>
+        <div class="form-group">
+            <h5>Non disposables equipment</h5>
+            <input class="form-control" type="text" name="equipment_type" placeholder="microscope">
+        </div>
+        <div class="form-group">
+            <h5>Non disposable needed</h5>
+            <input class="form-control" type="text" name="equip_needed" placeholder="20">
+        </div>
+        <div class="form-group">
+            <h5>Disposables</h5>
+            <input class="form-control" type="text" name="disposable_type" placeholder="syringe">
+        </div>
+        <div class="form-group">
+            <h5>Disposables needed</h5>
+            <input class="form-control" type="text" name="dispos_needed" placeholder="20">
+        </div>
+        <div class="form-group">
+            <h5>Experiment status</h5>
+            <input class="form-control" type="text" name="completed" placeholder="default 'incomplete'::completed">
+        </div>
+        <div class="form-group">
+            <h5>Result</h5>
+            <input class="form-control" type="text" name="result" placeholder="default 'unknown'::test_result">
+        </div>
+        
+        <div class="form-group">
+            <button href="/experimentsupdate" class="btn btn-outline-info">Submit</button>
+        </div>
+        </form>
+        {% endif %}   
+    </div>
+    {% endblock %}

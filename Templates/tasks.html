@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+  {% block content %}
+    {%include'flash.html'%}
+    
+    
+        <table class="table table-hover table-secondary table-m mt-3">
+            <thead>
+               
+                
+                <th>Task id</th>
+                <th>Experiment id</th>
+                <th>Employee id</th>
+                <th>Experiment status</th>
+                <th>result</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+            </thead>
+            <tbody>
+               {% for i in task %} 
+                <tr>
+                 <td>{{i.task_id}}</td>
+                 <td>{{i.exper_id}}</td>
+                 <td>{{i.emp_id}}</td>
+                 <td>{{i.completed}}</td>
+                 <td>{{i.result}}</td>
+                 <td> <a  href="#"class="btn btn-info">Edit</a></td>
+                 <td> <a href="{{url_for('Deletetask', id=i.exper_id, id1 = i.task_id)}}"><button class="btn btn-danger active">Delete</button></a></td>
+
+                </tr>
+                {% endfor %}
+             </tbody>
+
+        </table>
+    
+    {% endblock %}

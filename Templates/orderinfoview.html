@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+  {% block content %}
+    {% include'flash.html'%}
+    
+   
+        <table class="table table-hover table-m mt-3">
+            
+
+            <thead>
+                <th>Order id</th>
+                <th>Team id</th>
+                <th>Disposable type</th>
+                <th>Ordered amount</th>
+                <th>Order date</th>
+                <th>Total cost</th>
+             
+            </thead>
+
+            <tbody>
+            {% for i in teamorderinfofull %} 
+                 
+                <tr>
+                 
+                    <td>{{i.order_id}}</td>
+                    <td>{{i.team_id}}</td>
+                    <td>{{i.disposable_type}}</td>
+                    <td>{{i.ordered_amount}}</td>
+                    <td>{{i.ordered_at}}</td>
+                    <td>{{i.total_cost}}</td>
+                   </tr>
+                {% endfor %}
+             </tbody>
+
+        </table>
+    
+    
+    {% endblock %}

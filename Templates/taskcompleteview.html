@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+  {% block content %}
+    {%include'flash.html'%}
+    
+        <table class="table table-hover table-m mt-3">
+            <thead>
+                <th>Employee id</th>
+                <th>First name</th>
+                <th>Last name</th>
+                
+
+            </thead>
+            <tbody>
+               {% for i in employeeinfo %} 
+                <tr>
+                 
+                 <td>{{i.emp_id}}</td>
+                 <td>{{i.first_name}}</td>
+                 <td>{{i.last_name}}</td>
+
+                </tr>
+                {% endfor %}
+             </tbody>
+
+        </table>
+   
+    {% endblock %}

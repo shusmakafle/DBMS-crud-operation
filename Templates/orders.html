@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+  {% block content %}
+    {%include'flash.html'%}
+    
+    
+        <table class="table table-hover table-secondary table-m mt-3">
+            <thead>
+                <th>Order id</th>
+                <th>Employee id</th>
+                <th>Disposables</th> 
+                <th>Ordered amount</th>
+                <th>Ordered date</th> 
+                <th>Total cost</th> 
+                <th>Edit</th>
+                <th>Delete</th> 
+
+            </thead>
+            <tbody>
+               {% for i in disposableorder %} 
+                <tr>
+                 <td>{{i.order_id}}</td>
+                 <td>{{i.emp_id}}</td>
+                 <td>{{i.disposable_type}}</td>
+                 <td>{{i.ordered_amount}}</td>
+                 <td>{{i.ordered_at}}</td>
+                 <td>{{i.total_cost}}</td>
+                 <td> <a  href="#"class="btn btn-info">Edit</a></td>
+                 <td> <a  href="#"class="btn btn-danger active">Delete</a></td>
+
+                </tr>
+                {% endfor %}
+             </tbody>
+
+        </table>
+    
+    {% endblock %}

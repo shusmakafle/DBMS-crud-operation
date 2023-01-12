@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+  {%include'flash.html'%}
+  <div class="container">
+<form action="{{ url_for('addorders')}}" method="post"> 
+    <h5>Enter the orders Details</h5>
+    <div class="form-group">
+        <h5>Disposables</h5>
+        <input class="form-control" type="text" name="disposable_type" placeholder="syringe">
+    </div>
+    <div class="form-group">
+        <h5>Ordered amout</h5>
+        <input class="form-control" type="text" name="ordered_amount" placeholder="amount">
+    </div>
+    <div class="form-group">
+        <h5>Employee id</h5>
+        <input class="form-control" type="text" name="emp_id" placeholder="100-00-0009">
+    </div>
+    <div class="form-group">
+        <h5>Total cost</h5>
+        <input class="form-control" type="text" name="total_cost" placeholder="20">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-outline-info">Submit</button>
+    </div>
+    </form>
+</div>
+    {% endblock %}
